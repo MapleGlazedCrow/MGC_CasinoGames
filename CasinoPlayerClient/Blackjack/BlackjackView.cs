@@ -1,14 +1,5 @@
 ﻿using CardGamesLibrary;
 using CardGamesLibrary.Blackjack;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Net.Sockets;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using Terminal.Gui;
 
 namespace CasinoPlayerClient.Blackjack
@@ -406,6 +397,7 @@ namespace CasinoPlayerClient.Blackjack
 				}
 				else
 				{
+					_myTabs[i + 1].Item1.Enabled = true;
 					PlayerView view = _pBoxes[i];
 
 					view.MainBet.Text = $"[ {players[i].MainBet} ]".PadLeft(19, '.');

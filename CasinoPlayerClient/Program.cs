@@ -1,14 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Net.Sockets;
-using System.Reflection;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Net.Sockets;
 using CardGamesLibrary;
 using CasinoPlayerClient.Blackjack;
-using Microsoft.VisualBasic;
 using Terminal.Gui;
 
 namespace CasinoPlayerClient
@@ -68,7 +60,7 @@ namespace CasinoPlayerClient
 			};
 			menuBar.Menus = [adjust, help];
 
-			View bar = new() {
+			View bottomBar = new() {
 				X = 0,
 				Y = 44,
 				Width = Dim.Percent(100),
@@ -82,9 +74,9 @@ namespace CasinoPlayerClient
 			//var elem3 = new Label() { X = Pos.Right(elem2), Text = $" <{Application.PrevTabGroupKey}>/<{Application.NextTabGroupKey}> Prev/Next Tab Group " };
 			//var elem4 = new LineView(Orientation.Vertical) { X = Pos.Right(elem3) };
 			var elem5 = new Label() { X = Pos.AnchorEnd(), Text = $" {Environment.OSVersion}, {Application.Driver?.GetType().Name ?? ""} " };
-			bar.Add(elem1, elem2, /*elem3, elem4,*/ elem5);
+			bottomBar.Add(elem1, elem2, /*elem3, elem4,*/ elem5);
 
-			app.Add(menuBar, new ConnexionView(), bar);
+			app.Add(menuBar, new ConnexionView(), bottomBar);
 
 			Application.Run(app);
 			Application.Shutdown();

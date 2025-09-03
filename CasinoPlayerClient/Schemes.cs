@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terminal.Gui;
+﻿using Terminal.Gui;
 
 namespace CasinoPlayerClient
 {
@@ -80,7 +75,7 @@ namespace CasinoPlayerClient
 
 		public static readonly ColorScheme TabLabel = new ColorScheme {
 			Normal = new Terminal.Gui.Attribute(Color.White, Color.Black),
-			Disabled = new Terminal.Gui.Attribute(Color.Gray, Color.Black),
+			Disabled = new Terminal.Gui.Attribute(Color.DarkGray, Color.Black),
 		};
 
 		public static readonly ColorScheme TabHasTurn = new ColorScheme {
