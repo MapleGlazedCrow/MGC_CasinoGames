@@ -8,9 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Reference Include="CardGamesLibrary">
-			<HintPath>..\CardGamesLibrary\bin\Release\net8.0\CardGamesLibrary.dll</HintPath>
-		</Reference>
+		<PackageReference Include="CardGamesLibrary" Version="1.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

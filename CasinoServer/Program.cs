@@ -1,43 +1,39 @@
-﻿using System.Runtime.InteropServices;
-using System.Text;
-using System.Text.Json;
-using Terminal.Gui;
-using System;
-using System.Net.Http;
-using System.IO;
-using System.Collections.Concurrent;
-using System.Threading.Tasks;
-
-internal class Program
+﻿internal class Program
 {
-	static async Task Main(string[] args)
+	static async Task Main()
 	{
-		ArgumentNullException.ThrowIfNull(nameof(args));
 
 		Dictionary<string, string> arguments = [];
 
-#if DEBUG
-		arguments.Add("port", "9000");
-		arguments.Add("seats", "5");
-#endif
-
 		try
 		{
-			foreach(var arg in args)
+			Console.WriteLine("Specify the listening port :");
+			arguments.Add("port", Console.ReadLine() ?? "");
+			Console.WriteLine("Indicate the size of the lobby :");
+			arguments.Add("seats", Console.ReadLine() ?? "");
+
+			Console.WriteLine("Specify game type among these :" +
+				"\n- blackjack" +
+				"\n"
+			);
+
+			switch((Console.ReadLine() ?? "").ToUpperInvariant())
 			{
-				if(arg.Contains('='))
-				{
-					arguments.Add(arg.Split('=')[0].TrimStart('-'), arg.Split('=')[1]);
-				}
+				case "BLACKJACK":
+					Console.Clear();
+					await new BlackjackServer(
+						port: int.Parse(arguments["port"]),
+						seats: int.Parse(arguments["seats"])
+					).StartAsync(new CancellationTokenSource().Token);
+					break;
+
+				default:
+					throw new NotImplementedException("Game type not recognized");
 			}
-			await new BlackjackServer(
-				port: int.Parse(arguments["port"]),
-				seats: int.Parse(arguments["seats"])
-			).StartAsync(new CancellationTokenSource().Token);
 		}
 		catch(Exception ex)
 		{
-			Console.WriteLine(ex);
+			Console.Error.WriteLine(ex);
 		}
 	}
 }
