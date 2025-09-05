@@ -8,10 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Terminal.Gui" Version="2.*" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="CardGamesLibrary" Version="1.0.0" />
 	</ItemGroup>
 
