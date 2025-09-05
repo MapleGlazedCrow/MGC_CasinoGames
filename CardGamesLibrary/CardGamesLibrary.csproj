@@ -4,7 +4,7 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageId>CardGamesLibrary</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>Constant Bastonnais</Authors>
 		<Description>Shared utilities for server and client</Description>
 		<ImplicitUsings>enable</ImplicitUsings>

@@ -277,7 +277,7 @@ partial class BlackjackServer
 			var player = _gameState.Players.Values.FirstOrDefault(p => p?.Id == identifier)
 				?? throw new NullReferenceException("Command was received from a null player.");
 
-			if(!int.TryParse(arg, out int bet) || bet <= sMinimumBet)
+			if(!int.TryParse(arg, out int bet) || bet < sMinimumBet)
 			{
 				_ = UnicastAsync(MessageFactory.Wrap(MessageType.ERROR, "Invalid bet amount."), identifier);
 				return;

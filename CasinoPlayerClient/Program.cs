@@ -19,6 +19,8 @@ namespace CasinoPlayerClient
 			Application.Init();
 			Application.QuitKey = Key.Q.WithCtrl;
 
+			Application.Force16Colors = true;
+
 			var app = new Toplevel() {
 				X = Pos.Center(),
 				Y = 0,
