@@ -290,7 +290,7 @@ namespace CasinoPlayerClient
 	{
 		public NameFrameView()
 		{
-			Label.Text = "Greetings,\n Please enter your <b>name</b>.";
+			Label.Text = "Greetings,\n Please enter your name.";
 		}
 	}
 
@@ -299,7 +299,7 @@ namespace CasinoPlayerClient
 
 		public ChipsFrameView()
 		{
-			Label.Text = $"How many <b>chips</b> would\n you like to bring in?";
+			Label.Text = $"How many chips would\n you like to bring in?";
 		}
 	}
 
@@ -308,7 +308,7 @@ namespace CasinoPlayerClient
 
 		public AddressFrameView()
 		{
-			Label.Text = "Please enter the <b>address\n and port</b> of the lobby.";
+			Label.Text = "Please enter the address\n and port of the lobby.";
 		}
 	}
 

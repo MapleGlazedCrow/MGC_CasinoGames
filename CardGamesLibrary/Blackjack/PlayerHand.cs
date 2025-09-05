@@ -47,7 +47,7 @@
 		{
 			if(SplitCount == 7 && SplitScore <= 21)
 				return "7-Card Charlie!";
-			else if(HandScore > 21)
+			else if(SplitScore > 21)
 				return $"Bust! ({SplitScore})";
 			else
 				return $"{SplitScore}";
